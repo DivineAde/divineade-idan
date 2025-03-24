@@ -28,7 +28,7 @@ const HeroSection = () => {
 
   // TypeWriter effect for the tagline
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Full-Stack Developer & UI Designer";
+  const fullText = "Frontend Developer & UI Designer";
   const typingSpeed = 70;
   
   useEffect(() => {
@@ -135,7 +135,7 @@ const HeroSection = () => {
               className="flex flex-wrap gap-4 mb-12"
             >
               <Link 
-                href="/projects" 
+                href="#projects" 
                 className="group relative inline-flex items-center gap-2 px-6 py-3 font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all overflow-hidden shadow-lg shadow-blue-500/20"
               >
                 <span>View My Work</span>
@@ -144,7 +144,7 @@ const HeroSection = () => {
               </Link>
               
               <Link 
-                href="/contact" 
+                href="#contact" 
                 className="group relative inline-flex items-center gap-2 px-6 py-3 font-medium text-gray-900 dark:text-white bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 rounded-lg transition-all shadow-sm"
               >
                 <span>Let&apos;s Talk</span>
