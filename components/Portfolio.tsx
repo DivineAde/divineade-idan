@@ -37,6 +37,18 @@ const PortfolioSection = () => {
   const projects: Project[] = [
     {
       id: "project1",
+      title: "Animated Apple Iphone 3D Website",
+      description:
+        "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects.",
+      image: "/Screenshot 2025-03-25 101735.png",
+      tags: ["Next.js", "Tailwind CSS", "TypeScript", "Three.js", "GSAP"],
+      category: "frontend",
+      liveUrl: "https://divine-apple-clone.vercel.app/",
+      repoUrl: "https://github.com/DivineAde/animated-apple-site",
+      featured: true,
+    },
+    {
+      id: "project2",
       title: "Latest Movies/Shows and Trailer",
       description:
         "Website for the latest movie trailers! It's the perfect spot to catch exclusive sneak peeks of upcoming blockbusters, indie films, and more movies.",
@@ -44,11 +56,11 @@ const PortfolioSection = () => {
       tags: ["Next.js", "Tailwind CSS", "TypeScript"],
       category: "frontend",
       liveUrl: "https://hng-movie-box.vercel.app/",
-      repoUrl: "https://github.com/yourusername/ecommerce-dashboard",
+      repoUrl: "https://github.com/DivineAde",
       featured: true,
     },
     {
-      id: "project2",
+      id: "project3",
       title: "SSKN",
       description:
         "Introducing SSKN, a premier cosmetic e-commerce store offering a wide selection of skincare and beauty products from top brands and emerging favorites.",
@@ -56,11 +68,11 @@ const PortfolioSection = () => {
       tags: ["Next.js", "Tailwind CSS", "TypeScript"],
       category: "frontend",
       liveUrl: "https://sskn.vercel.app/",
-      repoUrl: "https://github.com/yourusername/travel-companion",
+      repoUrl: "https://github.com/DivineAde",
       featured: true,
     },
     {
-      id: "project3",
+      id: "project4",
       title: "Portfolio",
       description:
         "A Portfolio website that showcases my skills as a frontend developer.",
@@ -68,21 +80,21 @@ const PortfolioSection = () => {
       tags: ["Next.js", "Tailwind CSS", "TypeScript", "Three.js"],
       category: "frontend",
       liveUrl: "https://hng-movie-box.vercel.app/",
-      repoUrl: "https://github.com/yourusername/network-monitor",
-    },
-    {
-      id: "project4",
-      title: "Animated Apple Iphone 3D Website",
-      description:
-        "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects.",
-      image: "/p4.svg",
-      tags: ["Next.js", "Tailwind CSS", "TypeScript", "Three.js", "GSAP"],
-      category: "frontend",
-      liveUrl: "https://github.com/adrianhajdin/iphone",
-      repoUrl: "https://github.com/yourusername/sdwan-implementation",
+      repoUrl: "https://github.com/DivineAde",
     },
     {
       id: "project5",
+      title: "SCSS Portfolio",
+      description:
+        "Built my very first portfolio using scss for styling and React for frontend",
+      image: "/Screenshot 2024-03-28 110820.png",
+      tags: ["Next.js", "SCSS",],
+      category: "frontend",
+      liveUrl: "https://topg-teal.vercel.app/",
+      repoUrl: "https://github.com/DivineAde",
+    },
+    {
+      id: "project6",
       title: "Divine UI Library",
       description:
         "This is a UI component library I built. Users can check out ready-made components such as buttons, cards, and inputs. More components will be added very soon.",
@@ -90,10 +102,10 @@ const PortfolioSection = () => {
       tags: ["Next.js", "Tailwind CSS", "TypeScript"],
       category: "frontend",
       liveUrl: "https://github.com/adrianhajdin/iphone",
-      repoUrl: "https://github.com/yourusername/health-tracker",
+      repoUrl: "https://github.com/DivineAde",
     },
     {
-      id: "project6",
+      id: "project7",
       title: "Memory game",
       description:
         "A fun and interactive memory game built to test and improve your memory skills.",
@@ -101,10 +113,10 @@ const PortfolioSection = () => {
       tags: ["Next.js", "Tailwind CSS", "TypeScript"],
       category: "mobile",
       liveUrl: "https://memory-game-divineade.vercel.app/",
-      repoUrl: "https://github.com/yourusername/sdwan-implementation",
+      repoUrl: "https://github.com/DivineAde",
     },
     {
-      id: "project7",
+      id: "project8",
       title: "Chart Dashboard",
       description:
         "A dashboard for visualizing data with interactive charts and graphs.",
@@ -112,10 +124,10 @@ const PortfolioSection = () => {
       tags: ["Next.js", "Tailwind CSS", "TypeScript"],
       category: "network",
       liveUrl: "https://chart-dashboard-psi.vercel.app/",
-      repoUrl: "https://github.com/yourusername/sdwan-implementation",
+      repoUrl: "https://github.com/DivineAde",
     },
     {
-      id: "project8",
+      id: "project9",
       title: "Shoes",
       description:
         "An e-commerce website showcasing a collection of shoes with a modern and responsive design.",
@@ -123,7 +135,7 @@ const PortfolioSection = () => {
       tags: ["Next.js", "Tailwind CSS", "TypeScript"],
       category: "frontend",
       liveUrl: "https://nike-store-pi.vercel.app/",
-      repoUrl: "https://github.com/yourusername/sdwan-implementation",
+      repoUrl: "https://github.com/DivineAde",
     },
   ];
 

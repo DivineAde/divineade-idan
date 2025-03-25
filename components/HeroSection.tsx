@@ -161,10 +161,10 @@ const HeroSection = () => {
             >
               <span className="text-sm text-gray-500 dark:text-gray-400 mr-4">Find me on:</span>
               {[
-                { icon: Github, href: "https://github.com/yourusername", label: "Github" },
+                { icon: Github, href: "https://github.com/DivineAde", label: "Github" },
                 { icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-                { icon: Twitter, href: "https://twitter.com/yourusername", label: "Twitter" },
-                { icon: Mail, href: "mailto:you@example.com", label: "Email" }
+                { icon: Twitter, href: "https://x.com/adeyeye_divine", label: "Twitter" },
+                { icon: Mail, href: "divineadeyeye121@gmail.com", label: "Email" }
               ].map((social) => (
                 <Link 
                   key={social.label}
