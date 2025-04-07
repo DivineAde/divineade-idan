@@ -148,7 +148,7 @@ const AboutSection = () => {
                   </div>
                   <div className="text-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
                     <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                      15+
+                      6+
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                       Clients
