@@ -158,7 +158,7 @@ const AboutSection = () => {
 
                 {/* CTA Button */}
                 <a
-                  href="/Divine CV.pdf"
+                  href="/Divine Adeyeye_ CV.pdf"
                   download
                   className="w-full py-3 px-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center"
                 >
