@@ -52,7 +52,7 @@ const PortfolioSection = () => {
       title: "Latest Movies/Shows and Trailer",
       description:
         "Website for the latest movie trailers! It's the perfect spot to catch exclusive sneak peeks of upcoming blockbusters, indie films, and more movies.",
-      image: "/moviebox.png",
+      image: "/movieboxnew.png",
       tags: ["Next.js", "Tailwind CSS", "TypeScript"],
       category: "frontend",
       liveUrl: "https://hng-movie-box.vercel.app/",
