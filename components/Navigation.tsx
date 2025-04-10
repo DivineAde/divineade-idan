@@ -147,110 +147,67 @@ const Navigation = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            {/* Professional Logo */}
             <div className="flex-shrink-0">
               <Link
                 href="/"
                 className="flex items-center group"
                 aria-label="Homepage"
               >
-                <div className="relative h-12 w-44 flex items-center">
+                <div className="relative h-10 w-36">
                   <svg
-                    viewBox="0 0 200 60"
-                    className="w-full h-full"
+                    viewBox="0 0 180 50"
+                    className="w-full h-full fill-current group-hover:opacity-90 transition-opacity duration-300"
                     aria-hidden="true"
                   >
-                    {/* Gradient Definitions */}
+                    {/* Background shape */}
                     <defs>
                       <linearGradient
-                        id="logoMainGradient"
+                        id="logoGradient"
                         x1="0%"
                         y1="0%"
                         x2="100%"
-                        y2="100%"
+                        y2="0%"
                       >
-                        <stop offset="0%" stopColor="#2563eb" />
-                        <stop offset="100%" stopColor="#7c3aed" />
-                      </linearGradient>
-                      <linearGradient
-                        id="logoHoverGradient"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="100%"
-                      >
-                        <stop offset="0%" stopColor="#3b82f6" />
-                        <stop offset="100%" stopColor="#8b5cf6" />
-                      </linearGradient>
-                      <filter
-                        id="glow"
-                        x="-20%"
-                        y="-20%"
-                        width="140%"
-                        height="140%"
-                      >
-                        <feGaussianBlur stdDeviation="2" result="blur" />
-                        <feComposite
-                          in="SourceGraphic"
-                          in2="blur"
-                          operator="over"
+                        <stop
+                          offset="0%"
+                          stopColor="#2563eb"
+                          className="transition-all duration-300 group-hover:stop-color-blue-500"
                         />
-                      </filter>
-                      <clipPath id="textClip">
-                        <text
-                          x="58"
-                          y="38"
-                          fontFamily="Arial"
-                          fontSize="24"
-                          fontWeight="bold"
-                        >
-                          Divineade
-                        </text>
-                      </clipPath>
+                        <stop
+                          offset="100%"
+                          stopColor="#7c3aed"
+                          className="transition-all duration-300 group-hover:stop-color-purple-500"
+                        />
+                      </linearGradient>
                     </defs>
 
-                    {/* Logo Icon */}
-                    <g className="group-hover:opacity-90 transition-all duration-300">
-                      {/* Abstract D shape */}
-                      <path
-                        d="M20,15 C15,15 10,20 10,30 C10,40 15,45 20,45 C25,45 28,40 30,37 C35,30 32,15 20,15 Z M20,20 C27,20 29,30 25,35 C23,38 21,40 20,40 C17,40 15,37 15,30 C15,23 17,20 20,20 Z"
-                        fill="url(#logoMainGradient)"
-                        className="group-hover:fill-[url(#logoHoverGradient)] transition-all duration-300"
-                        filter="url(#glow)"
-                      />
-
-                      {/* Decorative element */}
-                      <circle
-                        cx="35"
-                        cy="30"
-                        r="2.5"
-                        fill="url(#logoMainGradient)"
-                        className="group-hover:fill-[url(#logoHoverGradient)] transition-all duration-300"
-                      />
-                    </g>
-
-                    {/* Text with clip mask and gradient background */}
-                    <rect
-                      x="55"
-                      y="15"
-                      width="135"
-                      height="30"
-                      fill="url(#logoMainGradient)"
-                      clipPath="url(#textClip)"
-                      className="group-hover:fill-[url(#logoHoverGradient)] transition-all duration-300"
+                    {/* Abstract Wing/Arc Elements */}
+                    <path
+                      d="M15,25 C20,15 30,10 40,14 C35,20 30,25 15,25 Z"
+                      fill="url(#logoGradient)"
+                      className="transition-all duration-300"
+                    />
+                    <path
+                      d="M15,25 C20,35 30,40 40,36 C35,30 30,25 15,25 Z"
+                      fill="url(#logoGradient)"
+                      className="transition-all duration-300"
+                      opacity="0.8"
                     />
 
-                    {/* Decorative line under text */}
-                    <line
-                      x1="58"
-                      y1="42"
-                      x2="155"
-                      y2="42"
-                      stroke="url(#logoMainGradient)"
-                      strokeWidth="1.5"
-                      className="group-hover:stroke-[url(#logoHoverGradient)] transition-all duration-300"
-                      strokeDasharray="1,1"
-                    />
+                    {/* Text path */}
+                    <text
+                      x="45"
+                      y="32"
+                      fontFamily="sans-serif"
+                      fontSize="22"
+                      fontWeight="bold"
+                      fill="url(#logoGradient)"
+                    >
+                      Divineade
+                    </text>
+
+                    {/* Subtle dot */}
+                    <circle cx="162" cy="25" r="3" fill="url(#logoGradient)" />
                   </svg>
                 </div>
               </Link>
