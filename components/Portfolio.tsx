@@ -84,14 +84,15 @@ const PortfolioSection = () => {
     },
     {
       id: "project5",
-      title: "SCSS Portfolio",
+      title: "Job Board",
       description:
-        "Built my very first portfolio using scss for styling and React for frontend",
-      image: "/Screenshot 2024-03-28 110820.png",
-      tags: ["Next.js", "SCSS",],
+        "Built my very ",
+      image: "/Job Board.png",
+      tags: ["Next.js", "Tailwind", "Typescript"],
       category: "frontend",
-      liveUrl: "https://topg-teal.vercel.app/",
+      liveUrl: "https://github.com/DivineAde/Job-Board-",
       repoUrl: "https://github.com/DivineAde",
+      featured: true,
     },
     {
       id: "project6",
@@ -101,7 +102,7 @@ const PortfolioSection = () => {
       image: "/component.png",
       tags: ["Next.js", "Tailwind CSS", "TypeScript"],
       category: "frontend",
-      liveUrl: "https://github.com/adrianhajdin/iphone",
+      liveUrl: "https://github.com/DivineAde",
       repoUrl: "https://github.com/DivineAde",
     },
     {
