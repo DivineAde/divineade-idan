@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 // components/Navigation.tsx
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { Menu, X, ChevronDown, Sun, Moon, Search } from 'lucide-react';
-import { useTheme } from 'next-themes'; 
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu, X, ChevronDown, Sun, Moon, Search } from "lucide-react";
+import { useTheme } from "next-themes";
 
 interface NavItem {
   label: string;
@@ -14,19 +14,19 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/#about' },
-  { 
-    label: 'Projects', 
-    href: '/#projects',
+  { label: "Home", href: "/" },
+  { label: "About", href: "/#about" },
+  {
+    label: "Projects",
+    href: "/#projects",
     children: [
-      { label: 'Web Development', href: '/#projects' },
-      { label: 'Mobile Apps', href: '/#projects' },
-      { label: 'Design Work', href: '/#projects' }
-    ]
+      { label: "Web Development", href: "/#projects" },
+      { label: "Mobile Apps", href: "/#projects" },
+      { label: "Design Work", href: "/#projects" },
+    ],
   },
-  { label: 'Blog', href: '/' },
-  { label: 'Contact', href: '/#contact' }
+  { label: "Blog", href: "/" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const Navigation = () => {
@@ -39,15 +39,15 @@ const Navigation = () => {
   const { theme, setTheme } = useTheme();
   const navRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
-  
+
   // Handle scroll event for header styling
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Close mobile menu on route change
@@ -64,8 +64,8 @@ const Navigation = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   // Focus search input when search opens
@@ -93,22 +93,26 @@ const Navigation = () => {
   };
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
     <>
       {/* Backdrop for mobile menu */}
       {isMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/20 dark:bg-black/50 z-40 md:hidden"
           onClick={() => setIsMenuOpen(false)}
           aria-hidden="true"
         />
       )}
-      
+
       {/* Search overlay */}
-      <div className={`fixed inset-0 bg-white/95 dark:bg-gray-900/95 z-50 flex items-start pt-32 justify-center transition-all duration-300 ${searchOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+      <div
+        className={`fixed inset-0 bg-white/95 dark:bg-gray-900/95 z-50 flex items-start pt-32 justify-center transition-all duration-300 ${
+          searchOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
         <div className="w-full max-w-2xl px-4">
           <form onSubmit={handleSearchSubmit} className="relative">
             <input
@@ -118,8 +122,8 @@ const Navigation = () => {
               className="w-full p-4 text-lg border-b-2 border-gray-300 dark:border-gray-700 bg-transparent outline-none focus:border-blue-500 dark:text-white transition-all"
               aria-label="Search"
             />
-            <button 
-              type="button" 
+            <button
+              type="button"
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
               onClick={() => setSearchOpen(false)}
               aria-label="Close search"
@@ -130,12 +134,12 @@ const Navigation = () => {
         </div>
       </div>
 
-      <nav 
+      <nav
         ref={navRef}
         className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled 
-            ? 'bg-white/90 dark:bg-gray-900/95 backdrop-blur-md shadow-lg py-3' 
-            : 'bg-transparent py-5'
+          scrolled
+            ? "bg-white/90 dark:bg-gray-900/95 backdrop-blur-md shadow-lg py-3"
+            : "bg-transparent py-5"
         }`}
         role="navigation"
         aria-label="Main navigation"
@@ -143,9 +147,112 @@ const Navigation = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
+            {/* Professional Logo */}
             <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center group" aria-label="Homepage">
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-violet-600 text-transparent bg-clip-text group-hover:from-blue-500 group-hover:to-purple-500 transition-all">Portfolio</span>
+              <Link
+                href="/"
+                className="flex items-center group"
+                aria-label="Homepage"
+              >
+                <div className="relative h-12 w-44 flex items-center">
+                  <svg
+                    viewBox="0 0 200 60"
+                    className="w-full h-full"
+                    aria-hidden="true"
+                  >
+                    {/* Gradient Definitions */}
+                    <defs>
+                      <linearGradient
+                        id="logoMainGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stopColor="#2563eb" />
+                        <stop offset="100%" stopColor="#7c3aed" />
+                      </linearGradient>
+                      <linearGradient
+                        id="logoHoverGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stopColor="#3b82f6" />
+                        <stop offset="100%" stopColor="#8b5cf6" />
+                      </linearGradient>
+                      <filter
+                        id="glow"
+                        x="-20%"
+                        y="-20%"
+                        width="140%"
+                        height="140%"
+                      >
+                        <feGaussianBlur stdDeviation="2" result="blur" />
+                        <feComposite
+                          in="SourceGraphic"
+                          in2="blur"
+                          operator="over"
+                        />
+                      </filter>
+                      <clipPath id="textClip">
+                        <text
+                          x="58"
+                          y="38"
+                          fontFamily="Arial"
+                          fontSize="24"
+                          fontWeight="bold"
+                        >
+                          Divineade
+                        </text>
+                      </clipPath>
+                    </defs>
+
+                    {/* Logo Icon */}
+                    <g className="group-hover:opacity-90 transition-all duration-300">
+                      {/* Abstract D shape */}
+                      <path
+                        d="M20,15 C15,15 10,20 10,30 C10,40 15,45 20,45 C25,45 28,40 30,37 C35,30 32,15 20,15 Z M20,20 C27,20 29,30 25,35 C23,38 21,40 20,40 C17,40 15,37 15,30 C15,23 17,20 20,20 Z"
+                        fill="url(#logoMainGradient)"
+                        className="group-hover:fill-[url(#logoHoverGradient)] transition-all duration-300"
+                        filter="url(#glow)"
+                      />
+
+                      {/* Decorative element */}
+                      <circle
+                        cx="35"
+                        cy="30"
+                        r="2.5"
+                        fill="url(#logoMainGradient)"
+                        className="group-hover:fill-[url(#logoHoverGradient)] transition-all duration-300"
+                      />
+                    </g>
+
+                    {/* Text with clip mask and gradient background */}
+                    <rect
+                      x="55"
+                      y="15"
+                      width="135"
+                      height="30"
+                      fill="url(#logoMainGradient)"
+                      clipPath="url(#textClip)"
+                      className="group-hover:fill-[url(#logoHoverGradient)] transition-all duration-300"
+                    />
+
+                    {/* Decorative line under text */}
+                    <line
+                      x1="58"
+                      y1="42"
+                      x2="155"
+                      y2="42"
+                      stroke="url(#logoMainGradient)"
+                      strokeWidth="1.5"
+                      className="group-hover:stroke-[url(#logoHoverGradient)] transition-all duration-300"
+                      strokeDasharray="1,1"
+                    />
+                  </svg>
+                </div>
               </Link>
             </div>
 
@@ -155,36 +262,47 @@ const Navigation = () => {
                 <div key={item.label} className="relative">
                   {item.children ? (
                     <div>
-                      <button 
+                      <button
                         onClick={() => toggleDropdown(item.label)}
                         className={`px-3 py-2 rounded-md flex items-center transition-all text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 ${
-                          isActive(item.href) 
-                            ? 'text-blue-600 dark:text-blue-400' 
-                            : 'text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400'
+                          isActive(item.href)
+                            ? "text-blue-600 dark:text-blue-400"
+                            : "text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
                         }`}
                         aria-expanded={openDropdown === item.label}
                         aria-controls={`dropdown-${item.label}`}
                       >
                         {item.label}
-                        <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`} aria-hidden="true" />
+                        <ChevronDown
+                          className={`ml-1 h-4 w-4 transition-transform ${
+                            openDropdown === item.label ? "rotate-180" : ""
+                          }`}
+                          aria-hidden="true"
+                        />
                       </button>
 
                       {/* Desktop Dropdown */}
-                      <div 
+                      <div
                         id={`dropdown-${item.label}`}
                         className={`absolute left-0 mt-2 w-56 rounded-md overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-gray-800 transition-all duration-200 ${
-                          openDropdown === item.label ? 'opacity-100 translate-y-0' : 'opacity-0 invisible -translate-y-2'
+                          openDropdown === item.label
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 invisible -translate-y-2"
                         }`}
                       >
-                        <div className="py-1" role="menu" aria-orientation="vertical">
+                        <div
+                          className="py-1"
+                          role="menu"
+                          aria-orientation="vertical"
+                        >
                           {item.children.map((child) => (
-                            <Link 
+                            <Link
                               key={child.label}
                               href={child.href}
                               className={`block w-full text-left px-4 py-2 text-sm ${
                                 isActive(child.href)
-                                  ? 'bg-gray-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400'
-                                  : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
+                                  ? "bg-gray-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400"
+                                  : "text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                               }`}
                               role="menuitem"
                               onClick={() => setOpenDropdown(null)}
@@ -196,14 +314,14 @@ const Navigation = () => {
                       </div>
                     </div>
                   ) : (
-                    <Link 
+                    <Link
                       href={item.href}
                       className={`px-3 py-2 rounded-md text-sm font-medium transition-all hover:bg-gray-100 dark:hover:bg-gray-800 ${
-                        isActive(item.href) 
-                          ? 'text-blue-600 dark:text-blue-400' 
-                          : 'text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400'
+                        isActive(item.href)
+                          ? "text-blue-600 dark:text-blue-400"
+                          : "text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
                       }`}
-                      aria-current={isActive(item.href) ? 'page' : undefined}
+                      aria-current={isActive(item.href) ? "page" : undefined}
                     >
                       {item.label}
                     </Link>
@@ -221,13 +339,15 @@ const Navigation = () => {
               >
                 <Search className="h-5 w-5" />
               </button>
-              
+
               <button
                 onClick={toggleTheme}
                 className="p-2 rounded-full text-gray-700 hover:text-blue-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all"
-                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                aria-label={`Switch to ${
+                  theme === "dark" ? "light" : "dark"
+                } mode`}
               >
-                {theme === 'dark' ? (
+                {theme === "dark" ? (
                   <Sun className="h-5 w-5" />
                 ) : (
                   <Moon className="h-5 w-5" />
@@ -243,7 +363,9 @@ const Navigation = () => {
                   aria-controls="mobile-menu"
                   aria-label="Main menu"
                 >
-                  <span className="sr-only">{isMenuOpen ? 'Close menu' : 'Open menu'}</span>
+                  <span className="sr-only">
+                    {isMenuOpen ? "Close menu" : "Open menu"}
+                  </span>
                   {isMenuOpen ? (
                     <X className="h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -256,36 +378,46 @@ const Navigation = () => {
         </div>
 
         {/* Mobile menu */}
-        <div 
+        <div
           id="mobile-menu"
           className={`md:hidden fixed right-0 top-0 bottom-0 w-3/4 max-w-sm bg-white dark:bg-gray-900 shadow-xl z-50 transition-transform duration-300 ease-in-out transform ${
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
           aria-hidden={!isMenuOpen}
         >
           <div className="pt-20 pb-6 px-6 h-full overflow-y-auto">
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
-                <div key={item.label} className="border-b border-gray-200 dark:border-gray-800 pb-2 last:border-b-0">
+                <div
+                  key={item.label}
+                  className="border-b border-gray-200 dark:border-gray-800 pb-2 last:border-b-0"
+                >
                   {item.children ? (
                     <>
                       <button
                         onClick={() => toggleDropdown(item.label)}
                         className={`w-full flex justify-between items-center py-3 rounded-md text-base font-medium ${
                           isActive(item.href)
-                            ? 'text-blue-600 dark:text-blue-400'
-                            : 'text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400'
+                            ? "text-blue-600 dark:text-blue-400"
+                            : "text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
                         }`}
                         aria-expanded={openDropdown === item.label}
                         aria-controls={`mobile-dropdown-${item.label}`}
                       >
                         {item.label}
-                        <ChevronDown className={`h-5 w-5 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`} aria-hidden="true" />
+                        <ChevronDown
+                          className={`h-5 w-5 transition-transform ${
+                            openDropdown === item.label ? "rotate-180" : ""
+                          }`}
+                          aria-hidden="true"
+                        />
                       </button>
-                      <div 
+                      <div
                         id={`mobile-dropdown-${item.label}`}
                         className={`transition-all duration-300 ease-in-out space-y-1 ml-4 ${
-                          openDropdown === item.label ? 'max-h-screen opacity-100 py-2' : 'max-h-0 opacity-0 overflow-hidden'
+                          openDropdown === item.label
+                            ? "max-h-screen opacity-100 py-2"
+                            : "max-h-0 opacity-0 overflow-hidden"
                         }`}
                       >
                         {item.children.map((child) => (
@@ -294,8 +426,8 @@ const Navigation = () => {
                             href={child.href}
                             className={`block py-2 rounded-md text-sm font-medium ${
                               isActive(child.href)
-                                ? 'text-blue-600 dark:text-blue-400'
-                                : 'text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400'
+                                ? "text-blue-600 dark:text-blue-400"
+                                : "text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
                             }`}
                             onClick={() => setIsMenuOpen(false)}
                           >
@@ -309,25 +441,25 @@ const Navigation = () => {
                       href={item.href}
                       className={`block py-3 rounded-md text-base font-medium ${
                         isActive(item.href)
-                          ? 'text-blue-600 dark:text-blue-400'
-                          : 'text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400'
+                          ? "text-blue-600 dark:text-blue-400"
+                          : "text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
                       }`}
                       onClick={() => setIsMenuOpen(false)}
-                      aria-current={isActive(item.href) ? 'page' : undefined}
+                      aria-current={isActive(item.href) ? "page" : undefined}
                     >
                       {item.label}
                     </Link>
                   )}
                 </div>
               ))}
-              
+
               {/* Mobile theme toggle */}
               <div className="pt-4 mt-4 border-t border-gray-200 dark:border-gray-800">
                 <button
                   onClick={toggleTheme}
                   className="flex items-center w-full py-3 text-base font-medium text-gray-700 dark:text-gray-200"
                 >
-                  {theme === 'dark' ? (
+                  {theme === "dark" ? (
                     <>
                       <Sun className="h-5 w-5 mr-3" />
                       <span>Light Mode</span>
