@@ -234,7 +234,7 @@ const HeroSection = () => {
               >
                 <div className="flex items-center gap-2">
                   <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400">
-                    <span className="font-bold">2+</span>
+                    <span className="font-bold">3+</span>
                   </div>
                   <div>
                     <span className="block text-xs text-gray-500 dark:text-gray-400">Years of</span>
