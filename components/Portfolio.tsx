@@ -37,6 +37,18 @@ const PortfolioSection = () => {
   const projects: Project[] = [
     {
       id: "project1",
+      title: "Price Paddi",
+      description:
+        "Price paddi is a web application that allows users to compare prices of products from different e-commerce websites.",
+      image: "/marketpaddi.jpeg",
+      tags: ["Next.js", "Tailwind CSS", "TypeScript",],
+      category: "frontend",
+      liveUrl: "https://real-nigeria-price-tm.vercel.app/",
+      repoUrl: "https://github.com/DivineAde/Price-Nigeria",
+      featured: true,
+    },
+    {
+      id: "project2",
       title: "Animated Apple Iphone 3D Website",
       description:
         "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects.",
@@ -48,7 +60,19 @@ const PortfolioSection = () => {
       featured: true,
     },
     {
-      id: "project2",
+      id: "project3",
+      title: "TGL Dashboard",
+      description:
+        " An Ecommerce Dashboard for TGL, a Nigerian E-commerce company.",
+      image: "/tgl.jpeg",
+      tags: ["Next.js", "Tailwind CSS", "Next-auth",],
+      category: "frontend",
+      liveUrl: "https://ajani-dashboard.vercel.app/",
+      repoUrl: "https://github.com/DivineAde/tgl-dashboard",
+      featured: true,
+    },
+    {
+      id: "project4",
       title: "Latest Movies/Shows and Trailer",
       description:
         "Website for the latest movie trailers! It's the perfect spot to catch exclusive sneak peeks of upcoming blockbusters, indie films, and more movies.",
@@ -60,7 +84,7 @@ const PortfolioSection = () => {
       featured: true,
     },
     {
-      id: "project3",
+      id: "project5",
       title: "SSKN",
       description:
         "Introducing SSKN, a premier cosmetic e-commerce store offering a wide selection of skincare and beauty products from top brands and emerging favorites.",
@@ -72,7 +96,7 @@ const PortfolioSection = () => {
       featured: true,
     },
     {
-      id: "project4",
+      id: "project6",
       title: "Portfolio",
       description:
         "A Portfolio website that showcases my skills as a frontend developer.",
@@ -83,7 +107,7 @@ const PortfolioSection = () => {
       repoUrl: "https://github.com/DivineAde",
     },
     {
-      id: "project5",
+      id: "project7",
       title: "Job Board",
       description:
         "Built my very ",
@@ -95,7 +119,7 @@ const PortfolioSection = () => {
       featured: true,
     },
     {
-      id: "project6",
+      id: "project8",
       title: "Divine UI Library",
       description:
         "This is a UI component library I built. Users can check out ready-made components such as buttons, cards, and inputs. More components will be added very soon.",
@@ -106,7 +130,7 @@ const PortfolioSection = () => {
       repoUrl: "https://github.com/DivineAde",
     },
     {
-      id: "project7",
+      id: "project9",
       title: "Memory game",
       description:
         "A fun and interactive memory game built to test and improve your memory skills.",
@@ -117,7 +141,7 @@ const PortfolioSection = () => {
       repoUrl: "https://github.com/DivineAde",
     },
     {
-      id: "project8",
+      id: "project10",
       title: "Chart Dashboard",
       description:
         "A dashboard for visualizing data with interactive charts and graphs.",
@@ -128,7 +152,7 @@ const PortfolioSection = () => {
       repoUrl: "https://github.com/DivineAde",
     },
     {
-      id: "project9",
+      id: "project11",
       title: "Shoes",
       description:
         "An e-commerce website showcasing a collection of shoes with a modern and responsive design.",
