@@ -46,29 +46,23 @@ const AboutSection = () => {
     ],
   };
 
-  const experiences = [
-    {
-      title: "NOC Engineer",
-      company: "Proline Technologies Ltd.",
-      period: "01/2023 - 06/2023",
-      description:
-        "Designed and implemented network infrastructure solutions for enterprise clients, ensuring 99.9% uptime.",
-    },
-    {
-      title: "Frontend Developer",
-      company: "Freelancer",
-      period: "2022 - 2025",
-      description:
-        "Development of various enterprise web applications using React and Next.js, improving performance by 80%.",
-    },
-    {
-      title: "Mobile Application Developer",
-      company: "Freelancer",
-      period: "2025",
-      description:
-        "Developed cross-platform mobile applications using React Native for clients across various industries.",
-    },
-  ];
+ const experiences = [
+  {
+    title: "Frontend Developer",
+    company: "Daply AI – Remote (USA)",
+    period: "Jul 2025 – Present",
+    description:
+      "Building responsive and scalable web applications using Next.js, TypeScript, and Tailwind CSS for an AI-powered content curation platform. Integrated RESTful APIs, optimized UI performance, and implemented modular components for personalized content and SEO. Collaborated with backend engineers and designers, utilizing Bitbucket, GitHub, Vercel, and CI/CD workflows for seamless deployment.",
+  },
+  {
+    title: "Frontend Developer & Network Engineer",
+    company: "Proline Technologies Limited – Lagos, Nigeria",
+    period: "Jan 2023 – Jun 2023",
+    description:
+      "Developed responsive network monitoring dashboards using React.js and Chart.js, improving load times by 45%. Integrated real-time APIs with WebSocket, implemented mobile-first UI, and ensured cross-browser consistency. Created component libraries and documentation for streamlined development across teams.",
+  },
+];
+
 
   return (
     <section
