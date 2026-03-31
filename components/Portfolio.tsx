@@ -55,8 +55,8 @@ const PortfolioSection = () => {
       image: "/image-app.png",
       tags: ["Next.js", "Tailwind CSS", "TypeScript"],
       category: "frontend",
-      liveUrl: "https://project12.vercel.app/",
-      repoUrl: "https://github.com/DivineAde/project12",
+      liveUrl: "https://divineimageapp.vercel.app/",
+      repoUrl: "https://github.com/DivineAde/divine-image-app",
       featured: true,
     },
     {
@@ -139,7 +139,6 @@ const PortfolioSection = () => {
       category: "frontend",
       liveUrl: "https://github.com/DivineAde/Job-Board-",
       repoUrl: "https://github.com/DivineAde",
-      featured: true,
     },
     {
       id: "project8",
