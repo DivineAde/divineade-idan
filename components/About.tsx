@@ -4,12 +4,11 @@
 import { useState } from "react";
 import {
   Code,
-  Smartphone,
   Network,
   Download,
   Briefcase,
-  Zap,
   User,
+  Wrench,
 } from "lucide-react";
 
 type Skill = {
@@ -18,38 +17,38 @@ type Skill = {
 };
 
 const AboutSection = () => {
-  const [activeTab, setActiveTab] = useState<"frontend" | "mobile" | "network">(
+  const [activeTab, setActiveTab] = useState<"frontend" | "backend" | "network">(
     "frontend"
   );
 
   const skills: Record<string, Skill[]> = {
     frontend: [
       { name: "React/Next.js", level: 90 },
-      { name: "TypeScript", level: 85 },
+      { name: "TypeScript", level: 88 },
       { name: "Tailwind CSS", level: 95 },
-      { name: "JavaScript", level: 90 },
-      { name: "HTML/CSS", level: 95 },
+      { name: "Tanstack Query", level: 85 },
+      { name: "UI/UX Design", level: 85 },
     ],
-    mobile: [
-      { name: "React Native", level: 85 },
-      { name: "Flutter", level: 60 },
-      { name: "Swift", level: 35 },
-      { name: "Mobile UI/UX", level: 90 },
-      { name: "App Publishing", level: 85 },
+    backend: [
+      { name: "Node.js", level: 80 },
+      { name: "Express.js", level: 80 },
+      { name: "NestJS", level: 70 },
+      { name: "PostgreSQL", level: 85 },
+      { name: "MongoDB", level: 85 },
     ],
-    network: [
+    network:[
       { name: "Network Security", level: 80 },
-      { name: "Cloud Infrastructure", level: 85 },
-      { name: "Cisco Networking", level: 75 },
+      { name: "Cloud Infrastructure", level: 65 },
+      { name: "Cisco Networking", level: 85 },
       { name: "Virtualization", level: 80 },
-      { name: "Network Automation", level: 75 },
+      { name: "Network Automation", level: 70 },
     ],
   };
 
  const experiences = [
   {
     title: "Frontend Developer",
-    company: "Daply AI – Remote (USA)",
+    company: "Daply AI",
     period: "Jul 2025 – Present",
     description:
       "Building responsive and scalable web applications using Next.js, TypeScript, and Tailwind CSS for an AI-powered content curation platform. Integrated RESTful APIs, optimized UI performance, and implemented modular components for personalized content and SEO. Collaborated with backend engineers and designers, utilizing Bitbucket, GitHub, Vercel, and CI/CD workflows for seamless deployment.",
@@ -59,7 +58,7 @@ const AboutSection = () => {
     company: "Proline Technologies Limited – Lagos, Nigeria",
     period: "Jan 2023 – Jun 2023",
     description:
-      "Developed responsive network monitoring dashboards using React.js and Chart.js, improving load times by 45%. Integrated real-time APIs with WebSocket, implemented mobile-first UI, and ensured cross-browser consistency. Created component libraries and documentation for streamlined development across teams.",
+      "Simulated and managed network environments using MikroTik Winbox and Cisco Packet Tracer, configuring routing, switching, IP addressing, and troubleshooting connectivity issues. Monitored network performance metrics including latency, packet loss, and throughput to maintain optimal uptime. Additionally, developed responsive frontend dashboards using React.js and Chart.js to visualize real-time network data, integrating WebSocket APIs and ensuring cross-browser and mobile compatibility.",
   },
 ];
 
@@ -85,11 +84,10 @@ const AboutSection = () => {
             About Me
           </div>
           <h2 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
-            My Journey & Expertise
+            Work Experience & Skills
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A versatile tech professional blending frontend excellence, mobile
-            innovation, and network engineering expertise.
+            A passionate software engineer with expertise in frontend and backend development, as well as network engineering. I thrive on creating exceptional digital experiences and have a proven track record of delivering high-quality projects for clients worldwide.
           </p>
         </div>
 
@@ -115,7 +113,7 @@ const AboutSection = () => {
                   Divine Adeyeye
                 </h3>
                 <p className="text-lg font-medium text-blue-600 dark:text-blue-400 mb-4">
-                  Frontend & Mobile Developer
+                  Software Engineer & Network Specialist
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 text-center mb-6">
                   Passionate about creating exceptional digital experiences with
@@ -126,14 +124,14 @@ const AboutSection = () => {
                 <div className="grid grid-cols-3 w-full gap-4 mb-6">
                   <div className="text-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
                     <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                      2+
+                      3+
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                       Years
                     </p>
                   </div>
                   <div className="text-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                    <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                    <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                       20+
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -154,7 +152,7 @@ const AboutSection = () => {
                 <a
                   href="/DIVINE ADEYEYE CV_EE.pdf"
                   download
-                  className="w-full py-3 px-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center"
+                  className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white  font-medium rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center"
                 >
                   <Download className="h-5 w-5 mr-2" />
                   Download Resume
@@ -198,7 +196,7 @@ const AboutSection = () => {
           <div className="lg:col-span-7">
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700 h-full">
               <div className="flex items-center mb-8">
-                <Zap className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" />
+                <Wrench className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" />
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                   Skills & Expertise
                 </h3>
@@ -218,14 +216,14 @@ const AboutSection = () => {
                     <Code className="h-4 w-4" /> Frontend
                   </button>
                   <button
-                    onClick={() => setActiveTab("mobile")}
+                    onClick={() => setActiveTab("backend")}
                     className={`flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all ${
-                      activeTab === "mobile"
+                      activeTab === "backend"
                         ? "bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 shadow-sm"
                         : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                     }`}
                   >
-                    <Smartphone className="h-4 w-4" /> Mobile
+                    <Code className="h-4 w-4" /> Backend
                   </button>
                   <button
                     onClick={() => setActiveTab("network")}
@@ -245,7 +243,7 @@ const AboutSection = () => {
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">
                   {activeTab === "frontend" &&
                     "Frontend Development Proficiency"}
-                  {activeTab === "mobile" && "Mobile Development Proficiency"}
+                  {activeTab === "backend" && "Backend Development Proficiency"}
                   {activeTab === "network" && "Network Engineering Proficiency"}
                 </h3>
                 <div className="space-y-6">
@@ -277,14 +275,14 @@ const AboutSection = () => {
               <div className="bg-gray-50 dark:bg-gray-700/30 rounded-xl p-6">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                   {activeTab === "frontend" && "Frontend Focus"}
-                  {activeTab === "mobile" && "Mobile Development Focus"}
+                  {activeTab === "backend" && "Backend Development Focus"}
                   {activeTab === "network" && "Network Engineering Focus"}
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300">
                   {activeTab === "frontend" &&
                     "Specialized in building modern, responsive web applications with React and Next.js, focusing on performance optimization and delightful user experiences."}
-                  {activeTab === "mobile" &&
-                    "Experienced in creating cross-platform mobile applications that provide native-like experiences while maintaining a single codebase for efficiency."}
+                  {activeTab === "backend" &&
+                    "Experienced in building scalable backend systems with Node.js, Express, and NestJS, focusing on API design, security, and performance."}
                   {activeTab === "network" &&
                     "Proficient in designing and implementing secure, reliable network infrastructures that support organizational goals and maintain consistent uptime."}
                 </p>
@@ -313,20 +311,18 @@ const AboutSection = () => {
                         </li>
                       </>
                     )}
-                    {activeTab === "mobile" && (
+                    {activeTab === "backend" && (
                       <>
                         <li className="flex items-start">
                           <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
                           <span className="text-gray-600 dark:text-gray-300 text-sm">
-                            Released 5+ apps with 4.5+ star ratings across app
-                            stores
+                            Built and maintained scalable APIs using Express.js and NestJS.
                           </span>
                         </li>
                         <li className="flex items-start">
                           <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
                           <span className="text-gray-600 dark:text-gray-300 text-sm">
-                            Reduced app size by 30% while maintaining all core
-                            functionality
+                            Implemented JWT and OAuth2 authentication with role-based access controls.
                           </span>
                         </li>
                       </>

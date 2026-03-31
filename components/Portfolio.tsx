@@ -37,14 +37,37 @@ const PortfolioSection = () => {
   const projects: Project[] = [
     {
       id: "project1",
-      title: "Price Paddi",
+      title: "ibasoro chat app",
       description:
-        "Price paddi is a web application that allows users to compare prices of products from different e-commerce websites.",
-      image: "/marketpaddi.jpeg",
-      tags: ["Next.js", "Tailwind CSS", "TypeScript",],
+        "A real-time chat application built with React js, Tailwind CSS, and Node.js. It features user authentication, private messaging, and group chats, providing a seamless communication experience.",
+      image: "/ibasoro.png",
+      tags: ["React.js", "Tailwind CSS",],
       category: "frontend",
-      liveUrl: "https://real-nigeria-price-tm.vercel.app/",
-      repoUrl: "https://github.com/DivineAde/Price-Nigeria",
+      liveUrl: "https://topg-chat-app.vercel.app",
+      repoUrl: "https://github.com/DivineAde/ibasoro-chat-",
+      featured: true,
+    },
+    {
+      id: "project12",
+      title: "AI Image App",
+      description:
+        "An AI-powered image editing application that offers features like background removal, object recoloring, and more. Built with React.js and Tailwind CSS, it provides a user-friendly interface for seamless image manipulation.",
+      image: "/image-app.png",
+      tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+      category: "frontend",
+      liveUrl: "https://project12.vercel.app/",
+      repoUrl: "https://github.com/DivineAde/project12",
+      featured: true,
+    },
+    {
+      id: "project13",
+      title: "MacOS Web App",
+      description:"A web application that replicates the macOS desktop experience, featuring interactive elements and a visually appealing design. Built with Svelte and Tailwind CSS, it offers users a nostalgic and immersive browsing experience.",
+      image: "/macospics.png",
+      tags: ["Svelte", "SCSS", "JavaScript "],
+      category: "frontend",
+      liveUrl: "https://da-mac-os.vercel.app/",
+      repoUrl: "https://github.com/DivineAde/MacOSWeb",
       featured: true,
     },
     {
@@ -69,11 +92,11 @@ const PortfolioSection = () => {
       category: "frontend",
       liveUrl: "https://ajani-dashboard.vercel.app/",
       repoUrl: "https://github.com/DivineAde/tgl-dashboard",
-      featured: true,
+      featured: false,
     },
     {
       id: "project4",
-      title: "Latest Movies/Shows and Trailer",
+      title: "TrailerSwiper ",
       description:
         "Website for the latest movie trailers! It's the perfect spot to catch exclusive sneak peeks of upcoming blockbusters, indie films, and more movies.",
       image: "/movieboxnew.png",

@@ -28,7 +28,7 @@ const HeroSection = () => {
 
   // TypeWriter effect for the tagline
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Frontend Developer & UI Designer";
+  const fullText = "Software Engineer";
   const typingSpeed = 70;
   
   useEffect(() => {
@@ -49,14 +49,14 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full overflow-hidden">
-      {/* Background with modern gradient */}
-      <div className="absolute inset-0 bg-gradient-radial from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 z-0" />
+      {/* Background with modern gradient
+      <div className="absolute inset-0 bg-gradient-radial from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 z-0" /> */}
       
-      {/* Abstract shapes */}
+      {/* Abstract shapes 
       <div className="absolute inset-0 overflow-hidden opacity-20 dark:opacity-30">
         <div className="absolute -top-[10%] -right-[10%] w-[50%] h-[50%] rounded-full bg-gradient-to-br from-blue-500 to-purple-500 blur-3xl" />
         <div className="absolute -bottom-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 blur-3xl" />
-      </div>
+      </div>*/}
       
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05] z-0" />
@@ -77,7 +77,7 @@ const HeroSection = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-600"></span>
               </span>
-              Available for freelance work
+              Online
             </motion.div>
             
             {/* Main heading with sequential animation */}

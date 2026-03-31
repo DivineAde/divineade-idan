@@ -147,70 +147,12 @@ const Navigation = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex-shrink-0">
-              <Link
-                href="/"
-                className="flex items-center group"
-                aria-label="Homepage"
-              >
-                <div className="relative h-10 w-36">
-                  <svg
-                    viewBox="0 0 180 50"
-                    className="w-full h-full fill-current group-hover:opacity-90 transition-opacity duration-300"
-                    aria-hidden="true"
-                  >
-                    {/* Background shape */}
-                    <defs>
-                      <linearGradient
-                        id="logoGradient"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#2563eb"
-                          className="transition-all duration-300 group-hover:stop-color-blue-500"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#7c3aed"
-                          className="transition-all duration-300 group-hover:stop-color-purple-500"
-                        />
-                      </linearGradient>
-                    </defs>
-
-                    {/* Abstract Wing/Arc Elements */}
-                    <path
-                      d="M15,25 C20,15 30,10 40,14 C35,20 30,25 15,25 Z"
-                      fill="url(#logoGradient)"
-                      className="transition-all duration-300"
-                    />
-                    <path
-                      d="M15,25 C20,35 30,40 40,36 C35,30 30,25 15,25 Z"
-                      fill="url(#logoGradient)"
-                      className="transition-all duration-300"
-                      opacity="0.8"
-                    />
-
-                    {/* Text path */}
-                    <text
-                      x="45"
-                      y="32"
-                      fontFamily="sans-serif"
-                      fontSize="22"
-                      fontWeight="bold"
-                      fill="url(#logoGradient)"
-                    >
-                      Divineade
-                    </text>
-
-                    {/* Subtle dot */}
-                    <circle cx="162" cy="25" r="3" fill="url(#logoGradient)" />
-                  </svg>
-                </div>
-              </Link>
+            <div className="flex items-center gap-3">
+              <img 
+                src="/favicon.ico" 
+                alt="logo" 
+                className="w-10 h-10 object-contain" 
+              />
             </div>
 
             {/* Navigation for Desktop */}
