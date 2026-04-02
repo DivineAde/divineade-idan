@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://divineade-idan.vercel.app"), // change this
 
   title: {
-    default: "Divine Ade | Frontend Developer & Full Stack Engineer",
-    template: "%s | Divine Ade",
+    default: "Divine Adeyeye | Frontend Developer & Full Stack Engineer",
+    template: "%s | Divine Adeyeye",
   },
 
   description:
-    "Divine Ade is a Frontend Developer and Full Stack Engineer specializing in Next.js, React, and scalable web applications. Explore projects, UI systems, and modern web solutions.",
+    "Divine Adeyeye is a Frontend Developer and Full Stack Engineer specializing in Next.js, React, and scalable web applications. Explore projects, UI systems, and modern web solutions.",
 
   keywords: [
-    "Divine Ade",
+    "Divine Adeyeye",
     "Frontend Developer Nigeria",
     "Next.js Developer",
     "React Developer",
@@ -35,21 +35,21 @@ export const metadata: Metadata = {
     "JavaScript Engineer",
   ],
 
-  authors: [{ name: "Divine Ade" }],
-  creator: "Divine Ade",
+  authors: [{ name: "Divine Adeyeye" }],
+  creator: "Divine Adeyeye",
 
   openGraph: {
-    title: "Divine Ade | Frontend Developer & Full Stack Engineer",
+    title: "Divine Adeyeye | Frontend Developer & Full Stack Engineer",
     description:
-      "Portfolio of Divine Ade showcasing modern web apps, scalable systems, and UI engineering using Next.js, React, and TypeScript.",
+      "Portfolio of Divine Adeyeye showcasing modern web apps, scalable systems, and UI engineering using Next.js, React, and TypeScript.",
     url: "https://divineade-idan.vercel.app",
-    siteName: "Divine Ade Portfolio",
+    siteName: "Divine Adeyeye Portfolio",
     images: [
       {
         url: "/swe.png", // add this image
         width: 1200,
         height: 630,
-        alt: "Divine Ade Portfolio",
+        alt: "Divine Adeyeye Portfolio",
       },
     ],
     locale: "en-NG",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Divine Ade | Frontend Developer",
+    title: "Divine Adeyeye | Frontend Developer",
     description:
       "Building high-performance web apps with Next.js, React, and TypeScript.",
     images: ["/swe.png"],
