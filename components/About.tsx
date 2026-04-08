@@ -150,7 +150,7 @@ const AboutSection = () => {
 
                 {/* CTA Button */}
                 <a
-                  href="/DIVINE ADEYEYE CV_EE.pdf"
+                  href=""
                   download
                   className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white  font-medium rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center"
                 >
@@ -307,6 +307,24 @@ const AboutSection = () => {
                           <span className="text-gray-600 dark:text-gray-300 text-sm">
                             Built reusable component libraries for enterprise
                             applications
+                          </span>
+                        </li>
+                        <li className="flex items-start">
+                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
+                          <span className="text-gray-600 dark:text-gray-300 text-sm">
+                            Optimized website performance by 40% through code splitting and optimization
+                          </span>
+                        </li>
+                        <li className="flex items-start">
+                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
+                          <span className="text-gray-600 dark:text-gray-300 text-sm">
+                            Implemented responsive designs for cross-platform compatibility
+                          </span>
+                        </li>
+                        <li className="flex items-start">
+                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
+                          <span className="text-gray-600 dark:text-gray-300 text-sm">
+                            Collaborated with cross-functional teams to deliver high-quality web applications
                           </span>
                         </li>
                       </>

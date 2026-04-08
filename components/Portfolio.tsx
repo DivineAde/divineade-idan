@@ -107,10 +107,10 @@ const PortfolioSection = () => {
     },
     {
       id: "project4",
-      title: "TrailerSwiper ",
+      title: "Trailer Swipe",
       description:
         "Website for the latest movie trailers! It's the perfect spot to catch exclusive sneak peeks of upcoming blockbusters, indie films, and more movies.",
-      image: "/movieboxnew.png",
+      image: "/trailer-swipe.png",
       tags: ["Next.js", "Tailwind CSS", "TypeScript"],
       category: "frontend",
       liveUrl: "https://hng-movie-box.vercel.app/",
