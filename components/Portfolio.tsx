@@ -41,7 +41,7 @@ const PortfolioSection = () => {
       description:
         "A real-time chat application built with React js, Tailwind CSS, and Node.js. It features user authentication, private messaging, and group chats, providing a seamless communication experience.",
       image: "/ibasoro.png",
-      tags: ["React.js", "Tailwind CSS",],
+      tags: ["React.js", "Tailwind CSS", "Node.js", "Socket.io"],
       category: "frontend",
       liveUrl: "https://topg-chat-app.vercel.app",
       repoUrl: "https://github.com/DivineAde/ibasoro-chat-",
@@ -53,7 +53,7 @@ const PortfolioSection = () => {
       description:
         "An AI-powered image editing application that offers features like background removal, object recoloring, and more. Built with React.js and Tailwind CSS, it provides a user-friendly interface for seamless image manipulation.",
       image: "/image-app.png",
-      tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+      tags: ["Next.js", "Tailwind CSS", "TypeScript", ],
       category: "frontend",
       liveUrl: "https://divineimageapp.vercel.app/",
       repoUrl: "https://github.com/DivineAde/divine-image-app",
