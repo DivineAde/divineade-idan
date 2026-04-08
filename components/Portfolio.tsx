@@ -61,6 +61,17 @@ const PortfolioSection = () => {
     },
     {
       id: "project13",
+      title: "Chatbot-v2",
+      description:"A chatbot that can answer questions about anything and everything using AI",
+      image: "/chatbot.png",
+      tags: ["Nextjs", "Tailwind CSS", "TypeScript"],
+      category: "frontend",
+      liveUrl: "https://divine-chatbot-v2.vercel.app/",
+      repoUrl: "https://github.com/DivineAde/chatbot-v2",
+      featured: true,
+    },
+    {
+      id: "project14",
       title: "MacOS Web App",
       description:"A web application that replicates the macOS desktop experience, featuring interactive elements and a visually appealing design. Built with Svelte and Tailwind CSS, it offers users a nostalgic and immersive browsing experience.",
       image: "/macospics.png",
