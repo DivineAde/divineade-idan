@@ -1,19 +1,21 @@
 "use client";
 
 // components/AboutSection.tsx
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   Code,
   Network,
-  Download,
   Briefcase,
   User,
   Wrench,
+  Server,
+  Cloud,
+  Calendar
 } from "lucide-react";
 
 type Skill = {
   name: string;
-  level: number;
+  icon: React.ReactNode;
 };
 
 const AboutSection = () => {
@@ -23,56 +25,66 @@ const AboutSection = () => {
 
   const skills: Record<string, Skill[]> = {
     frontend: [
-      { name: "React/Next.js", level: 90 },
-      { name: "TypeScript", level: 88 },
-      { name: "Tailwind CSS", level: 95 },
-      { name: "Tanstack Query", level: 85 },
-      { name: "UI/UX Design", level: 85 },
+      { name: "HTML", icon: <img src="/icons/html-5-svgrepo-com.svg" alt="React" className="w-20 h-20 object-contain" /> },
+      { name: "CSS", icon: <img src="/icons/css-3-svgrepo-com.svg" alt="React" className="w-20 h-20 object-contain" /> },
+      { name: "JavaScript", icon: <img src="/icons/javascript-svgrepo-com.svg" alt="React" className="w-20 h-20 object-contain" /> },
+      { name: "React", icon: <img src="/icons/reactjs-svgrepo-com.svg" alt="React" className="w-20 h-20 object-contain" /> },
+      { name: "Next.js", icon: <img src="/icons/nextjs-svgrepo-com.svg" alt="Next.js" className="w-20 h-20 object-contain dark:invert" /> },
+      { name: "Scss", icon: <img src="/icons/scss-svgrepo-com.svg" alt="React" className="w-20 h-20 object-contain" /> },
+      { name: "TypeScript", icon: <img src="/icons/typescript-official-svgrepo-com.svg" alt="TypeScript" className="w-20 h-20 object-contain" /> },
+      { name: "Tailwind CSS", icon: <img src="/icons/tailwind-svgrepo-com.svg" alt="Tailwind CSS" className="w-20 h-20 object-contain" /> },
+      { name: "Git", icon: <img src="/icons/git-svgrepo-com.svg" alt="Stripe" className="w-20 h-20 object-contain" /> },
+      { name: "Figma", icon: <img src="/icons/figma-svgrepo-com.svg" alt="React" className="w-20 h-20 object-contain" /> },
     ],
     backend: [
-      { name: "Node.js", level: 80 },
-      { name: "Express.js", level: 80 },
-      { name: "NestJS", level: 70 },
-      { name: "PostgreSQL", level: 85 },
-      { name: "MongoDB", level: 85 },
+      { name: "Node.js", icon: <img src="/iconsb/node-js-svgrepo-com.svg" alt="nodejs" className="w-20 h-20 object-contain dark:invert" /> },
+      { name: "Nest Js", icon: <img src="/iconsb/nestjs-svgrepo-com.svg" alt="nestjs" className="w-20 h-20 object-contain dark:invert" /> },
+      { name: "Express Js", icon: <img src="/iconsb/express-svgrepo-com.svg" alt="express" className="w-20 h-20 object-contain dark:invert" /> },
+      { name: "MongoDB", icon: <img src="/iconsb/mongodb-svgrepo-com.svg" alt="mongodb" className="w-20 h-20 object-contain" /> },
+      { name: "PostgreSQL", icon: <img src="/iconsb/postgresql-svgrepo-com.svg" alt="postgresql" className="w-20 h-20 object-contain" /> },
+      { name: "Swagger", icon: <img src="/iconsb/swagger-svgrepo-com.svg" alt="swagger" className="w-20 h-20 object-contain" /> },
+      { name: "Postman", icon: <img src="/icons/postman-icon-svgrepo-com.svg" alt="postman" className="w-20 h-20 object-contain" /> },
+      { name: "Prisma", icon: <img src="/iconsb/prisma-svgrepo-com.svg" alt="prisma" className="w-20 h-20 object-contain" /> },
+      { name: "Docker", icon: <img src="/iconsb/docker-svgrepo-com.svg" alt="docker" className="w-20 h-20 object-contain" /> },
+      { name: "Git", icon: <img src="/icons/git-svgrepo-com.svg" alt="git" className="w-20 h-20 object-contain" /> },
     ],
     network:[
-      { name: "Network Security", level: 80 },
-      { name: "Cloud Infrastructure", level: 65 },
-      { name: "Cisco Networking", level: 85 },
-      { name: "Virtualization", level: 80 },
-      { name: "Network Automation", level: 70 },
+      { name: "Network Infrastructure", icon: <img src="/icons/nextjs-svgrepo-com.svg" alt="Network" className="w-20 h-20 object-contain" /> },
+      { name: "Cloud Infrastructure", icon: <Cloud className="w-20 h-20 text-blue-400" /> },
+      { name: "Cisco Networking", icon: <Network className="w-20 h-20 text-gray-700 dark:text-gray-300" /> },
+      { name: "Virtualization", icon: <img src="/icons/nextjs-svgrepo-com.svg" alt="Virtualization" className="w-20 h-20 object-contain" /> },
+      { name: "Network Automation", icon: <img src="/icons/nextjs-svgrepo-com.svg" alt="Network Automation" className="w-20 h-20 object-contain" /> },
     ],
   };
 
- const experiences = [
-  {
-    title: "Frontend Developer",
-    company: "Daply AI",
-    period: "Jul 2025 – Present",
-    description:
-      "Building responsive and scalable web applications using Next.js, TypeScript, and Tailwind CSS for an AI-powered content curation platform. Integrated RESTful APIs, optimized UI performance, and implemented modular components for personalized content and SEO. Collaborated with backend engineers and designers, utilizing Bitbucket, GitHub, Vercel, and CI/CD workflows for seamless deployment.",
-  },
-  {
-    title: "Frontend Developer & Network Engineer",
-    company: "Proline Technologies Limited – Lagos, Nigeria",
-    period: "Jan 2023 – Jun 2023",
-    description:
-      "Simulated and managed network environments using MikroTik Winbox and Cisco Packet Tracer, configuring routing, switching, IP addressing, and troubleshooting connectivity issues. Monitored network performance metrics including latency, packet loss, and throughput to maintain optimal uptime. Additionally, developed responsive frontend dashboards using React.js and Chart.js to visualize real-time network data, integrating WebSocket APIs and ensuring cross-browser and mobile compatibility.",
-  },
-];
+  const experiences = [
+    {
+      title: "Frontend Engineer",
+      company: "Daply",
+      period: "Jul 2025 – Present",
+      description:
+        "Building responsive and scalable web applications using Next.js, TypeScript, and Tailwind CSS for an AI-powered content curation platform. Integrated RESTful APIs, optimized UI performance, and implemented modular components for personalized content and SEO. Collaborated with backend engineers and designers, utilizing Bitbucket, GitHub, Vercel, and CI/CD workflows for seamless deployment.",
+    },
+    {
+      title: "Frontend Developer & Network Engineer",
+      company: "Proline Technologies Limited – Lagos, Nigeria",
+      period: "Jan 2023 – Jun 2023",
+      description:
+        "Simulated and managed network environments using MikroTik Winbox and Cisco Packet Tracer, configuring routing, switching, IP addressing, and troubleshooting connectivity issues. Monitored network performance metrics including latency, packet loss, and throughput to maintain optimal uptime. Additionally, developed responsive frontend dashboards using React.js and Chart.js to visualize real-time network data, integrating WebSocket APIs and ensuring cross-browser and mobile compatibility.",
+    },
+  ];
 
 
   return (
     <section
       id="about"
-      className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900 relative overflow-hidden"
+      className="py-24 bg-gray-50 dark:bg-gray-950 relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-full h-full opacity-30">
+        <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
           <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-blue-200 dark:bg-blue-900/30 blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-purple-200 dark:bg-purple-900/30 blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-blue-200 dark:bg-blue-900/30 blur-3xl"></div>
         </div>
       </div>
 
@@ -83,290 +95,138 @@ const AboutSection = () => {
             <User className="w-4 h-4 mr-2" />
             About Me
           </div>
-          <h2 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
-            Work Experience & Skills
+          <h2 className="text-5xl font-bold text-blue-600 mb-6">
+            Skills & Work Experience
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             A passionate software engineer with expertise in frontend and backend development, as well as network engineering. I thrive on creating exceptional digital experiences and have a proven track record of delivering high-quality projects for clients worldwide.
           </p>
         </div>
 
-        {/* Restructured content with modern card-based layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left column: Profile card */}
-          <div className="lg:col-span-5 flex flex-col">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 mb-8 border border-gray-100 dark:border-gray-700 flex-1">
-              <div className="flex flex-col items-center">
-                {/* Profile image with better framing */}
-                <div className="relative w-48 h-48 mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full opacity-20 blur-md"></div>
-                  <div className="relative h-full w-full rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg">
-                    <img
-                      src="/IMG-20230907-WA0060.jpg"
-                      className="object-cover w-full h-full"
-                      alt="Profile"
-                    />
-                  </div>
-                </div>
+        {/* Skills Section */}
+        <div className="mb-24">
+          <div className="flex items-center justify-center mb-8">
+            <Wrench className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" />
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+              Skills & Expertise
+            </h3>
+          </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                  Divine Adeyeye
-                </h3>
-                <p className="text-lg font-medium text-blue-600 dark:text-blue-400 mb-4">
-                  Software Engineer & Network Specialist
-                </p>
-                <p className="text-gray-600 dark:text-gray-300 text-center mb-6">
-                  Passionate about creating exceptional digital experiences with
-                  a background in network engineering.
-                </p>
-
-                {/* Stats row */}
-                <div className="grid grid-cols-3 w-full gap-4 mb-6">
-                  <div className="text-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                    <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                      3+
-                    </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Years
-                    </p>
-                  </div>
-                  <div className="text-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                    <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                      20+
-                    </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Projects
-                    </p>
-                  </div>
-                  <div className="text-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                    <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                      6+
-                    </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Clients
-                    </p>
-                  </div>
-                </div>
-
-                {/* CTA Button */}
-                <a
-                  href=""
-                  download
-                  className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white  font-medium rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center"
-                >
-                  <Download className="h-5 w-5 mr-2" />
-                  Download Resume
-                </a>
-              </div>
-            </div>
-
-            {/* Experience Card */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
-              <div className="flex items-center mb-6">
-                <Briefcase className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" />
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                  Experience
-                </h3>
-              </div>
-              <div className="space-y-6">
-                {experiences.map((experience, index) => (
-                  <div
-                    key={index}
-                    className="relative pl-6 pb-6 border-l-2 border-gray-200 dark:border-gray-700 last:border-0 last:pb-0"
-                  >
-                    <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600"></div>
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-white">
-                      {experience.title}
-                    </h4>
-                    <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-1">
-                      <span className="font-medium">{experience.company}</span>
-                      <span className="mx-2">•</span>
-                      <span>{experience.period}</span>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      {experience.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
+          {/* Modern tabbed interface */}
+          <div className="flex justify-center mb-10 overflow-x-auto no-scrollbar">
+            <div className="inline-flex p-1 bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg">
+              <button
+                onClick={() => setActiveTab("frontend")}
+                className={`flex items-center gap-2 px-6 py-2.5 rounded-lg font-medium transition-all ${
+                  activeTab === "frontend"
+                    ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
+                    : "text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                }`}
+              >
+                <Code className="h-4 w-4" /> Frontend
+              </button>
+              <button
+                onClick={() => setActiveTab("backend")}
+                className={`flex items-center gap-2 px-6 py-2.5 rounded-lg font-medium transition-all ${
+                  activeTab === "backend"
+                    ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
+                    : "text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                }`}
+              >
+                <Server className="h-4 w-4" /> Backend
+              </button>
+              <button
+                onClick={() => setActiveTab("network")}
+                className={`flex items-center gap-2 px-6 py-2.5 rounded-lg font-medium transition-all ${
+                  activeTab === "network"
+                    ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
+                    : "text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                }`}
+              >
+                <Network className="h-4 w-4" /> Network
+              </button>
             </div>
           </div>
 
-          {/* Right column: Skills */}
-          <div className="lg:col-span-7">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700 h-full">
-              <div className="flex items-center mb-8">
-                <Wrench className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" />
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                  Skills & Expertise
-                </h3>
-              </div>
-
-              {/* Modern tabbed interface */}
-              <div className="flex mb-8 overflow-x-auto no-scrollbar">
-                <div className="inline-flex p-1 bg-gray-100 dark:bg-gray-700/50 rounded-lg">
-                  <button
-                    onClick={() => setActiveTab("frontend")}
-                    className={`flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all ${
-                      activeTab === "frontend"
-                        ? "bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 shadow-sm"
-                        : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-                    }`}
-                  >
-                    <Code className="h-4 w-4" /> Frontend
-                  </button>
-                  <button
-                    onClick={() => setActiveTab("backend")}
-                    className={`flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all ${
-                      activeTab === "backend"
-                        ? "bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 shadow-sm"
-                        : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-                    }`}
-                  >
-                    <Code className="h-4 w-4" /> Backend
-                  </button>
-                  <button
-                    onClick={() => setActiveTab("network")}
-                    className={`flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all ${
-                      activeTab === "network"
-                        ? "bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 shadow-sm"
-                        : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-                    }`}
-                  >
-                    <Network className="h-4 w-4" /> Network
-                  </button>
+          {/* Skill SVG Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {skills[activeTab].map((skill, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center p-12 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md hover:border-blue-500 dark:hover:border-blue-500 transition-all group"
+              >
+                <div className="text-blue-600 dark:text-blue-400 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300">
+                  {skill.icon}
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
 
-              {/* Skill content */}
-              <div className="mb-10">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">
-                  {activeTab === "frontend" &&
-                    "Frontend Development Proficiency"}
-                  {activeTab === "backend" && "Backend Development Proficiency"}
-                  {activeTab === "network" && "Network Engineering Proficiency"}
-                </h3>
-                <div className="space-y-6">
-                  {skills[activeTab].map((skill, index) => (
-                    <div key={index}>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-800 dark:text-gray-200 font-medium">
-                          {skill.name}
-                        </span>
-                        <span className="text-blue-600 dark:text-blue-400 font-semibold">
-                          {skill.level}%
-                        </span>
+        {/* Experience Timeline */}
+        <div className="mb-12">
+          <div className="flex items-center justify-center mb-12">
+            <Briefcase className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3" />
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+              Work Experience
+            </h3>
+          </div>
+
+          <div className="relative container mx-auto px-4 max-w-5xl">
+            {/* Center Line for Desktop / Left Line for Mobile */}
+            <div className="absolute left-[43px] md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-blue-200 dark:bg-blue-800 rounded-full"></div>
+
+            {experiences.map((exp, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div
+                  key={index}
+                  className={`mb-12 md:mb-16 relative flex flex-col md:flex-row items-center ${
+                    isEven ? "md:flex-row-reverse" : ""
+                  }`}
+                >
+                  {/* Half Width Spacer */}
+                  <div className="hidden md:block w-full md:w-1/2"></div>
+
+                  {/* Timeline Dot (More elegant concentric circle design) */}
+                  <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-8 md:top-1/2 md:-translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 dark:bg-gray-900 border-4 border-white dark:border-gray-950 shadow-[0_0_0_2px_rgba(37,99,235,0.4)] dark:shadow-[0_0_0_2px_rgba(59,130,246,0.5)] z-10 transition-transform duration-300 hover:scale-110">
+                    <div className="w-3 h-3 bg-blue-600 dark:bg-blue-500 rounded-full"></div>
+                  </div>
+
+                  {/* Content Card */}
+                  <div
+                    className={`w-full md:w-1/2 pl-24 md:pl-0 ${
+                      isEven ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"
+                    }`}
+                  >
+                    <div className="bg-white dark:bg-gray-800/80 rounded-2xl shadow-xl hover:shadow-2xl p-8 border border-gray-100 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 group">
+                      
+                      {/* Period Badge */}
+                      <div className={`inline-flex items-center px-3 py-1 mb-4 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-semibold tracking-wide ${isEven ? 'md:ml-auto' : ''}`}>
+                        <Calendar className="w-3 h-3 mr-1.5" />
+                        {exp.period}
                       </div>
-                      <div className="h-2.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-600"
-                          style={{
-                            width: `${skill.level}%`,
-                            transition: "width 1s ease-in-out",
-                          }}
-                        ></div>
+                      
+                      <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        {exp.title}
+                      </h4>
+                      
+                      <div
+                        className={`flex flex-col sm:flex-row sm:items-center text-gray-600 dark:text-gray-400 font-medium mb-5 text-sm gap-2 ${
+                          isEven ? "md:justify-end" : ""
+                        }`}
+                      >
+                        <span className="text-blue-600/90 dark:text-blue-400/90">{exp.company}</span>
                       </div>
+                      
+                      <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed text-left md:text-inherit">
+                        {exp.description}
+                      </p>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
-
-              {/* Additional content specific to each skill area */}
-              <div className="bg-gray-50 dark:bg-gray-700/30 rounded-xl p-6">
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                  {activeTab === "frontend" && "Frontend Focus"}
-                  {activeTab === "backend" && "Backend Development Focus"}
-                  {activeTab === "network" && "Network Engineering Focus"}
-                </h4>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {activeTab === "frontend" &&
-                    "Specialized in building modern, responsive web applications with React and Next.js, focusing on performance optimization and delightful user experiences."}
-                  {activeTab === "backend" &&
-                    "Experienced in building scalable backend systems with Node.js, Express, and NestJS, focusing on API design, security, and performance."}
-                  {activeTab === "network" &&
-                    "Proficient in designing and implementing secure, reliable network infrastructures that support organizational goals and maintain consistent uptime."}
-                </p>
-
-                {/* Relevant projects or achievements */}
-                <div className="mt-6">
-                  <h5 className="font-medium text-gray-800 dark:text-gray-200 mb-2">
-                    Key Achievements:
-                  </h5>
-                  <ul className="space-y-2">
-                    {activeTab === "frontend" && (
-                      <>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
-                          <span className="text-gray-600 dark:text-gray-300 text-sm">
-                            Improved website load time by 40% through code
-                            splitting and optimization
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
-                          <span className="text-gray-600 dark:text-gray-300 text-sm">
-                            Built reusable component libraries for enterprise
-                            applications
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
-                          <span className="text-gray-600 dark:text-gray-300 text-sm">
-                            Optimized website performance by 40% through code splitting and optimization
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
-                          <span className="text-gray-600 dark:text-gray-300 text-sm">
-                            Implemented responsive designs for cross-platform compatibility
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
-                          <span className="text-gray-600 dark:text-gray-300 text-sm">
-                            Collaborated with cross-functional teams to deliver high-quality web applications
-                          </span>
-                        </li>
-                      </>
-                    )}
-                    {activeTab === "backend" && (
-                      <>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
-                          <span className="text-gray-600 dark:text-gray-300 text-sm">
-                            Built and maintained scalable APIs using Express.js and NestJS.
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
-                          <span className="text-gray-600 dark:text-gray-300 text-sm">
-                            Implemented JWT and OAuth2 authentication with role-based access controls.
-                          </span>
-                        </li>
-                      </>
-                    )}
-                    {activeTab === "network" && (
-                      <>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
-                          <span className="text-gray-600 dark:text-gray-300 text-sm">
-                            Maintained 99.9% network uptime for enterprise
-                            clients
-                          </span>
-                        </li>
-                        <li className="flex items-start">
-                          <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
-                          <span className="text-gray-600 dark:text-gray-300 text-sm">
-                            Implemented security protocols that reduced breach
-                            attempts by 75%
-                          </span>
-                        </li>
-                      </>
-                    )}
-                  </ul>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>
