@@ -10,7 +10,6 @@ import {
   X,
   LayoutGrid,
   Briefcase,
-  Award,
   ArrowRight,
 } from "lucide-react";
 
@@ -262,111 +261,198 @@ const PortfolioSection = () => {
           </p>
         </div>
 
-        {/* Featured projects - horizontal scrolling carousel */}
+        {/* Featured projects — Editorial Bento Layout */}
         {featuredProjects.length > 0 && (
-          <div className="mb-16">
-            <div className="flex items-center justify-between mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center">
-                <Award className="w-5 h-5 mr-2 text-yellow-500" />
-                Featured Work
-              </h3>
+          <div className="mb-20">
+            {/* Section label */}
+            <div className="flex items-center justify-between mb-10">
+              <div className="flex items-center gap-4">
+                <span className="text-[11px] tracking-[0.25em] uppercase font-semibold text-gray-400 dark:text-gray-500">
+                  Selected Work
+                </span>
+                <span className="h-px w-16 bg-blue-500" />
+              </div>
               <button
                 onClick={() => setFilter("all")}
-                className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors"
+                className="group flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
-                View All <ArrowRight className="w-4 h-4 ml-1" />
+                Browse all projects
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {featuredProjects.map((project) => (
-                <div
-                  key={project.id}
-                  className="relative group overflow-hidden rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 transition-all duration-300 hover:shadow-xl"
-                >
-                  <div className="relative h-64 overflow-hidden">
-                    {/* Project thumbnail with gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 group-hover:opacity-30 transition-opacity z-10"></div>
+            {/* Hero card — first featured project */}
+            {featuredProjects[0] && (
+              <div
+                className="relative group overflow-hidden rounded-3xl mb-4 cursor-pointer"
+                onClick={() => openModal(featuredProjects[0])}
+                style={{ height: "420px" }}
+              >
+                {/* Number indicator */}
+                <span className="absolute top-6 left-6 z-30 text-[11px] tracking-widest uppercase font-bold text-white/60 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                  01 / Hero
+                </span>
+
+                {/* Image */}
+                <img
+                  src={featuredProjects[0].image}
+                  alt={featuredProjects[0].title}
+                  className="absolute inset-0 h-full w-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+
+                {/* Dark scrim */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+
+                {/* Bottom info */}
+                <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
+                  {/* Tags row */}
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {featuredProjects[0].tags.slice(0, 4).map((tag, i) => (
+                      <span
+                        key={i}
+                        className="text-[11px] px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 capitalize leading-tight">
+                    {featuredProjects[0].title}
+                  </h3>
+                  <p className="text-white/60 text-sm max-w-2xl line-clamp-2 mb-5">
+                    {featuredProjects[0].description}
+                  </p>
+
+                  <div className="flex items-center gap-4">
+                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-white group-hover:gap-3 transition-all">
+                      View Project <ArrowRight className="w-4 h-4" />
+                    </span>
+                    <div className="h-px flex-1 bg-white/20 max-w-[80px]" />
+                    {featuredProjects[0].repoUrl && (
+                      <a
+                        href={featuredProjects[0].repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-white/50 hover:text-white transition-colors"
+                        aria-label="GitHub"
+                      >
+                        <Github className="h-5 w-5" />
+                      </a>
+                    )}
+                    {featuredProjects[0].liveUrl && (
+                      <a
+                        href={featuredProjects[0].liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-white/50 hover:text-white transition-colors"
+                        aria-label="Live Demo"
+                      >
+                        <ExternalLink className="h-5 w-5" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Side accent line */}
+                <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            )}
+
+            {/* Secondary bento grid — remaining featured projects */}
+            {featuredProjects.length > 1 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {featuredProjects.slice(1).map((project, idx) => (
+                  <div
+                    key={project.id}
+                    className="relative group overflow-hidden rounded-2xl cursor-pointer border border-gray-100 dark:border-white/[0.06] bg-white dark:bg-gray-900/60"
+                    style={{ height: "280px" }}
+                    onClick={() => openModal(project)}
+                  >
+                    {/* Image */}
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="h-full w-full object-cover"
+                      className="absolute inset-0 h-full w-full object-cover scale-100 group-hover:scale-110 transition-transform duration-500 ease-out"
                     />
 
-                    {/* Category badge */}
-                    <div className="absolute top-4 left-4 z-10">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/90 dark:bg-black/60 text-blue-600 dark:text-blue-400">
-                        {getCategoryIcon(project.category)}
-                        <span className="ml-1 capitalize">
-                          {project.category}
-                        </span>
+                    {/* Base overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                    {/* Number badge */}
+                    <div className="absolute top-4 left-4 z-20">
+                      <span className="text-[10px] font-bold tracking-widest text-white/50">
+                        {String(idx + 2).padStart(2, "0")}
                       </span>
                     </div>
-                  </div>
 
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                      {project.title}
-                    </h3>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tags.slice(0, 3).map((tag, index) => (
-                        <span
-                          key={index}
-                          className="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                      {project.tags.length > 3 && (
-                        <span className="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
-                          +{project.tags.length - 3}
-                        </span>
-                      )}
+                    {/* Category dot */}
+                    <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5">
+                      <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+                      <span className="text-[10px] text-white/50 uppercase tracking-wider font-medium capitalize">
+                        {project.category}
+                      </span>
                     </div>
 
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 line-clamp-2">
-                      {project.description}
-                    </p>
+                    {/* Frosted glass panel — slides up on hover */}
+                    <div className="absolute bottom-0 left-0 right-0 p-5 z-20 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                      <h4 className="text-base font-bold text-white mb-1.5 capitalize leading-snug">
+                        {project.title}
+                      </h4>
 
-                    <div className="flex justify-between items-center">
-                      <button
-                        onClick={() => openModal(project)}
-                        className="flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
-                      >
-                        View Details <ArrowRight className="ml-1 w-4 h-4" />
-                      </button>
+                      {/* Tags — always visible */}
+                      <div className="flex flex-wrap gap-1.5 mb-3">
+                        {project.tags.slice(0, 3).map((tag, i) => (
+                          <span
+                            key={i}
+                            className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 border border-white/15 text-white/70 backdrop-blur-sm"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
 
-                      <div className="flex gap-3">
-                        {project.repoUrl && (
-                          <a
-                            href={project.repoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                            aria-label="GitHub Repository"
-                          >
-                            <Github className="h-5 w-5" />
-                          </a>
-                        )}
-                        {project.liveUrl && (
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                            aria-label="Live Demo"
-                          >
-                            <ExternalLink className="h-5 w-5" />
-                          </a>
-                        )}
+                      <div className="flex items-center justify-between">
+                        <span className="text-[11px] text-blue-400 font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                          Open project <ArrowRight className="w-3 h-3" />
+                        </span>
+                        <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                          {project.repoUrl && (
+                            <a
+                              href={project.repoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-white/40 hover:text-white transition-colors"
+                              aria-label="GitHub"
+                            >
+                              <Github className="h-4 w-4" />
+                            </a>
+                          )}
+                          {project.liveUrl && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-white/40 hover:text-white transition-colors"
+                              aria-label="Live"
+                            >
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
+
+                    {/* Bottom accent bar */}
+                    <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left z-30" />
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
@@ -382,7 +468,7 @@ const PortfolioSection = () => {
                 onClick={() => setFilter("all")}
                 className={`px-5 py-2 rounded-lg font-medium transition-all ${
                   filter === "all"
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
+                    ? "bg-blue-600 text-white shadow-md"
                     : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
                 }`}
               >
@@ -392,7 +478,7 @@ const PortfolioSection = () => {
                 onClick={() => setFilter("frontend")}
                 className={`flex items-center gap-2 px-5 py-2 rounded-lg font-medium transition-all ${
                   filter === "frontend"
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
+                    ? "bg-blue-600 text-white shadow-md"
                     : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
                 }`}
               >
@@ -402,7 +488,7 @@ const PortfolioSection = () => {
                 onClick={() => setFilter("mobile")}
                 className={`flex items-center gap-2 px-5 py-2 rounded-lg font-medium transition-all ${
                   filter === "mobile"
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
+                    ? "bg-blue-600 text-white shadow-md"
                     : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
                 }`}
               >
@@ -412,7 +498,7 @@ const PortfolioSection = () => {
                 onClick={() => setFilter("network")}
                 className={`flex items-center gap-2 px-5 py-2 rounded-lg font-medium transition-all ${
                   filter === "network"
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
+                    ? "bg-blue-600 text-white shadow-md"
                     : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
                 }`}
               >
