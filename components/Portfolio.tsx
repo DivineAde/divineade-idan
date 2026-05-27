@@ -39,7 +39,7 @@ const PortfolioSection = () => {
       title: "ibasoro chat app",
       description:
         "A real-time chat application built with React js, Tailwind CSS, and Node.js. It features user authentication, private messaging, and group chats, providing a seamless communication experience.",
-      image: "/ibasoro.png",
+      image: "/ibasorotwo.png",
       tags: ["React.js", "Tailwind CSS", "Node.js", "Socket.io"],
       category: "frontend",
       liveUrl: "https://topg-chat-app.vercel.app",
@@ -67,6 +67,18 @@ const PortfolioSection = () => {
       category: "frontend",
       liveUrl: "https://divine-chatbot-v2.vercel.app/",
       repoUrl: "https://github.com/DivineAde/chatbot-v2",
+      featured: true,
+    },
+    {
+      id: "project15",
+      title: "Pinora",
+      description:
+        "A clone of the popular Pinterest platform, allowing users to discover and save images and ideas.",
+      image: "/Screenshot_27-5-2026_11476_pinora-app.vercel.app.jpeg",
+      tags: ["React Js", "Tailwind CSS", "Node.js", "MongoDB"],
+      category: "frontend",
+      liveUrl: "https://pinoral.vercel.app/",
+      repoUrl: "https://github.com/DivineAde",
       featured: true,
     },
     {
@@ -237,7 +249,7 @@ const PortfolioSection = () => {
   return (
     <section
       id="projects"
-      className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden"
+      className="py-24 bg-background relative overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10">
@@ -276,8 +288,7 @@ const PortfolioSection = () => {
                 onClick={() => setFilter("all")}
                 className="group flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
-                Browse all projects
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+               
               </button>
             </div>
 
@@ -391,7 +402,7 @@ const PortfolioSection = () => {
                     {/* Category dot */}
                     <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5">
                       <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
-                      <span className="text-[10px] text-white/50 uppercase tracking-wider font-medium capitalize">
+                      <span className="text-[10px] text-white/50 tracking-wider font-medium capitalize">
                         {project.category}
                       </span>
                     </div>

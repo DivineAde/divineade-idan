@@ -78,7 +78,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="py-24 bg-gray-50 dark:bg-gray-950 relative overflow-hidden"
+      className="py-24 relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10">
